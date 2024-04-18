@@ -26,7 +26,7 @@
 <!-- ======== sidebar-nav end =========== -->
 
 <!-- ======== main-wrapper start =========== -->
-<main class="main-wrapper">
+<main class="main-wrapper bg-secondary">
     <!-- ========== header start ========== -->
     <header class="header">
         <div class="container-fluid">
@@ -38,7 +38,7 @@
                                 id="menu-toggle"
                                 class="main-btn primary-btn btn-hover"
                             >
-                                <i class="lni lni-chevron-left me-2"></i> {{ __('Menu') }}
+                                <i class="lni lni-chevron-left me-2"></i> 
                             </button>
                         </div>
                     </div>
@@ -82,8 +82,8 @@
     <!-- ========== header end ========== -->
 
     <!-- ========== section start ========== -->
-    <section class="section">
-        <div class="container-fluid">
+    <section class="section ">
+        <div class="container-fluid ">
             @yield('content')
         </div>
         <!-- end container -->
@@ -91,19 +91,19 @@
     <!-- ========== section end ========== -->
 
     <!-- ========== footer start =========== -->
-    <footer class="footer">
-        <div class="container-fluid">
+    <footer class="footer ">
+        <div class="container-fluid ">
             <div class="row">
                 <div class="col-md-6 order-last order-md-first">
                     <div class="copyright text-md-start">
-                        <p class="text-sm">
+                        <p class="text-sm text-light">
                             Designed and Developed by
                             <a
                                     href="https://plainadmin.com"
                                     rel="nofollow"
                                     target="_blank"
                             >
-                                PlainAdmin
+                                Toko Online
                             </a>
                         </p>
                     </div>
