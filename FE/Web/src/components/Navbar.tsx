@@ -10,15 +10,36 @@ import clsx from "clsx";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = React.useState<boolean>(false);
+  const [isSticky, setIsSticky] = React.useState<boolean>(false);
+
+  React.useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 100) {
+        setIsSticky(true);
+      } else {
+        setIsSticky(false);
+      }
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  });
   const navLinks = [
-    { name: "Home", link: "/" },
-    { name: "Story", link: "/" },
-    { name: "Shop", link: "/" },
-    { name: "Contact", link: "/" },
+    { name: "HOME", link: "/" },
+    { name: "STORY", link: "/" },
+    { name: "SHOP", link: "/" },
+    { name: "CONTACT", link: "/" },
   ];
   return (
-    <main>
-      <nav className="flex justify-between px-5 py-4">
+    <header className="w-full bg-white md:bg-transparent fixed top-0 left-0 right-0 z-50">
+      <nav
+        className={`flex justify-between items-center content-center px-5 py-3 text-black lg:py-4 ${
+          isSticky
+            ? "sticky top-0 left-0 border-b bg-white duration-300"
+            : "md:text-white"
+        }`}
+      >
         <div className="flex gap-5 items-center">
           <section className="flex gap-5  items-center">
             <IoSearch className="text-2xl lg:hidden" />
@@ -28,7 +49,7 @@ export default function Navbar() {
             <Link
               key={index}
               to={data.link}
-              className=" hidden lg:block font-bold text-gray-400 hover:text-black"
+              className="text-base font-semibold hidden lg:block   hover:underline hover:underline-offset-8 hover:duration-300 hover:transition-all"
             >
               {data.name}
             </Link>
@@ -52,11 +73,16 @@ export default function Navbar() {
               <IoSearch className="text-xl cursor-pointer" />
               <HiOutlineUserCircle className="text-2xl cursor-pointer" />
               <MdOutlineShoppingCart className="text-xl cursor-pointer" />
+              <h1>[woocs sd=1]</h1>
             </div>
             <hr />
             <div className="flex flex-col gap-5">
               {navLinks.map((data, index) => (
-                <Link key={index} to={data.link} className="font-bold text-xl">
+                <Link
+                  key={index}
+                  to={data.link}
+                  className="text-base font-semibold  lg:block  text-gray-800 hover:text-black"
+                >
                   {data.name}
                 </Link>
               ))}
@@ -65,19 +91,20 @@ export default function Navbar() {
         </div>
 
         <section className="flex gap-2  items-center">
-          <h1 className="text-2xl cursor-pointer">toko online</h1>
+          <h1 className="weight-900 text-2xl cursor-pointer">toko online</h1>
         </section>
         <section className="flex gap-5  items-center">
           <IoSearch className="text-2xl hidden lg:block cursor-pointer" />
           <HiOutlineUserCircle className="text-3xl hidden lg:block cursor-pointer" />
-          <MdOutlineShoppingCart className="text-2xl cursor-pointer " />
+          <MdOutlineShoppingCart className="text-2xl cursor-pointer" />
+          <h1 className="hidden lg:block">[woocs sd=1]</h1>
           <FiMenu
             onClick={() => setIsOpen(true)}
             className="text-2xl lg:hidden cursor-pointer"
           />
         </section>
       </nav>
-      <hr />
-    </main>
+      {/* <hr /> */}
+    </header>
   );
 }
