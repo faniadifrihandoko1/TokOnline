@@ -14,6 +14,8 @@ export default {
         colorFontDetail: "#404040",
         bgOutOfStock: "#333333",
         bgFooter: "#142683",
+        fontColorBlueSky: "#6ec1e4",
+        sale: "#333333",
       },
     },
   },
