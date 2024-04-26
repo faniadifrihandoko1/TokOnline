@@ -80,7 +80,12 @@ function BestProduct() {
           {/* CARD */}
           {dataBestProduct.map((item, index) => (
             <div className="rounded-lg " key={index}>
-              <div className="p-5 flex flex-col justify-center items-center">
+              <div className="p-5 flex flex-col justify-center items-center relative">
+                {/* sale */}
+                <div className="bg-sale px-2 py-1 text-white absolute top-6 left-0 md:top-14 md:left-5">
+                  <h1>Sale!</h1>
+                </div>
+                {/* sale */}
                 <div>
                   <img src={item.img} alt="" />
                 </div>
@@ -105,28 +110,6 @@ function BestProduct() {
             </div>
           ))}
         </div>
-        {/* sale */}
-        {/* <div className="bg-sale px-2 py-1 text-white absolute top-10 left-0">
-          <h1>Sale!</h1>
-        </div>
-        <div className="image-product h-[70%]">
-          <img src={blackTees} alt="blackTees" />
-        </div>
-        <div className="title-product h-[10%] text-xl font-bold text-gray-900">
-          <h1>Black Tee</h1>
-        </div>
-        <div className="price-product h-[20%]  flex flex-col gap-1 ">
-          <h1
-            className="before-disc line-through"
-            style={{
-              textDecorationThickness: "2px",
-              textDecorationColor: "red",
-            }}
-          >
-            Rp. 100.000
-          </h1>
-          <h1 className="after-disc bg-colorDicount text-white">Rp. 80.000</h1>
-        </div> */}
       </div>
     </div>
   );
