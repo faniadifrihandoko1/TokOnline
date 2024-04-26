@@ -25,7 +25,7 @@ export default function Content() {
     },
   ];
   return (
-    <div className="content py-14 md:py-40 bg-bgBluesvile flex flex-col md:flex-row gap-9 justify-center items-center">
+    <div className="content py-16 md:py-40 bg-bgBluesvile flex flex-col md:flex-row gap-9 justify-center items-center">
       {content.map((item, index) => (
         <div key={index} className="px-10 text-center">
           <div className="mb-6 h-20 w-20 mx-auto">
