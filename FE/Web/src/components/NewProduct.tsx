@@ -1,23 +1,28 @@
-import { dataBestProduct } from "../mocks/dataProduct";
+import React from "react";
+import { dataNewProduct } from "../mocks/dataProduct";
 import formatCurrency from "../utils/ConvertMoney";
 
-function BestProduct() {
+export default function NewProduct() {
   return (
-    <section className="px-5 mb-10">
+    <section className="px-5 my-10">
       <h1 className="text-3xl font-bold italic text-fontColorBlueSky">
-        Featured Items
+        New Items
       </h1>
       <p className="text-sm text-gray-700 mt-1">For all gender styles</p>
       <div className="flex  justify-center   mx-auto relative ">
         {/* GRID */}
         <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 md:gap-2 ">
           {/* CARD */}
-          {dataBestProduct.map((item, index) => (
+          {dataNewProduct.map((item, index) => (
             <div className="rounded-lg " key={index}>
               <div className="p-5 flex flex-col justify-center items-center relative">
                 {/* sale */}
-                <div className="bg-sale px-2 py-1 text-white absolute top-6 left-0 md:top-14 md:left-5">
-                  <h1>Sale!</h1>
+                <div
+                  className={`bg-sale px-2 py-1 text-white absolute top-6 left-0 md:top-14 md:left-5 1 ${
+                    item.isReady ? "hidden" : "block"
+                  }`}
+                >
+                  <h1>Out Of Stock</h1>
                 </div>
                 {/* sale */}
                 <div>
@@ -48,5 +53,3 @@ function BestProduct() {
     </section>
   );
 }
-
-export default BestProduct;

@@ -7,7 +7,7 @@ export default function Content() {
   const content = [
     {
       img: farm,
-      title: "Traditional Values / Modern Interpretation",
+      title: "Traditional Values",
       description:
         "Bluesville puts Indonesia traditional artisanal values into modern and relevant form of clothing, utilizing traditional techniques such as using Plant-Based Dyes, Batik, and Handweaving",
     },
