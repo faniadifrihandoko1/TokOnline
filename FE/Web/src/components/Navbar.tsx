@@ -69,7 +69,7 @@ export default function Navbar() {
                 </div>
 
                 <section className="flex gap-2  items-center">
-                    <h1 className="weight-900 text-2xl cursor-pointer">tokooo online</h1>
+                    <h1 className="weight-900 text-2xl cursor-pointer">toko online</h1>
                 </section>
                 <section className="flex gap-5  items-center">
                     <IoSearch className="text-2xl hidden lg:block cursor-pointer" />
