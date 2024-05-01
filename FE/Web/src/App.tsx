@@ -1,11 +1,12 @@
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
 
-import Login from "./pages/auth/login";
-import Register from "./pages/auth/register";
+import Login from "./pages/auth";
 import Home from "./pages/home";
 import Layout from "./layout";
 import DetailProduct from "./pages/detailProduct";
+import Contact from "./pages/contact";
+import CheckOut from "./pages/checkout";
 
 function App() {
   return (
@@ -14,8 +15,9 @@ function App() {
         <Route index element={<Home />} />
         <Route path="/detail/:id" element={<DetailProduct />} />
       </Route>
+      <Route path="/contact" element={<Contact />} />
       <Route path="/login" element={<Login />} />
-      <Route path="/signup" element={<Register />} />
+      <Route path="/checkout" element={<CheckOut />} />
     </Routes>
   );
 }
