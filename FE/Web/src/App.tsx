@@ -9,11 +9,12 @@ import Contact from "./pages/contact";
 import CheckOut from "./pages/checkout";
 
 function App() {
+
   return (
     <Routes>
       <Route path="/" element={<Layout />}>
         <Route index element={<Home />} />
-        <Route path="/detail/:id" element={<DetailProduct />} />
+        <Route path="/product-detail/:productId" element={<DetailProduct />} />
       </Route>
       <Route path="/contact" element={<Contact />} />
       <Route path="/login" element={<Login />} />
