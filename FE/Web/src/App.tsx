@@ -1,8 +1,23 @@
+import { Route, Routes } from "react-router-dom";
 import "./App.css";
-import Home from "./pages/Home";
+
+import Login from "./pages/auth/login";
+import Register from "./pages/auth/register";
+import Home from "./pages/home";
+import Layout from "./layout";
+import DetailProduct from "./pages/detailProduct";
 
 function App() {
-  return <Home />;
+  return (
+    <Routes>
+      <Route path="/" element={<Layout />}>
+        <Route index element={<Home />} />
+        <Route path="/detail/:id" element={<DetailProduct />} />
+      </Route>
+      <Route path="/login" element={<Login />} />
+      <Route path="/signup" element={<Register />} />
+    </Routes>
+  );
 }
 
 export default App;

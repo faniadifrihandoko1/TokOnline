@@ -1,5 +1,5 @@
 import React from "react";
-import { dataNewProduct } from "../mocks/dataProduct";
+import {  dataPopulerProduct } from "../mocks/dataProduct";
 import formatCurrency from "../utils/ConvertMoney";
 
 export default function NewProduct() {
@@ -13,7 +13,7 @@ export default function NewProduct() {
         {/* GRID */}
         <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 md:gap-2 ">
           {/* CARD */}
-          {dataNewProduct.map((item, index) => (
+          {dataPopulerProduct.map((item, index) => (
             <div className="rounded-lg " key={index}>
               <div className="p-5 flex flex-col justify-center items-center relative">
                 {/* sale */}
@@ -22,11 +22,11 @@ export default function NewProduct() {
                     item.isReady ? "hidden" : "block"
                   }`}
                 >
-                  <h1>Out Of Stock</h1>
+                  <h1 className="text-sm">Out Of Stock</h1>
                 </div>
                 {/* sale */}
                 <div>
-                  <img src={item.img} alt="" />
+                  <img src={item.img[0]} alt="" />
                 </div>
                 <div className="title-product h-[10%] text-xl font-semibold text-gray-900 mb-3 ">
                   <h1>{item.title}</h1>
