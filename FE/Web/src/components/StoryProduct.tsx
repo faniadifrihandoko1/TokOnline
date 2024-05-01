@@ -5,7 +5,7 @@ import content4 from "../assets/imageContent/content4.jpg";
 
 export default function StoryProduct() {
   return (
-    <figure className="flex flex-col md:flex-row h-screen md:p-10 ">
+    <figure className="flex flex-col md:flex-row h-screen md:p-10 my-10">
       <div className="md:w-1/2 ">
         <img src={content1} alt="" className="brightness-50 h-full w-full" />
       </div>
